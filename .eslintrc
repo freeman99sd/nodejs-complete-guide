@@ -4,6 +4,7 @@
   "rules": {
     "prettier/prettier": ["error"],
     "no-unused-vars": 1,
-    "no-console": 0
+    "no-console": 0,
+    "prefer-destructuring": 0
   }
 }

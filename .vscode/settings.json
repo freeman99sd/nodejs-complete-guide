@@ -1,0 +1,14 @@
+{
+  "sqltools.connections": [
+    {
+      "connectionTimeout": 30,
+      "database": "node-complete",
+      "dialect": "MySQL",
+      "name": "mysql-localhost",
+      "password": "Wzf@1130",
+      "port": 3306,
+      "server": "127.0.0.1",
+      "username": "root"
+    }
+  ]
+}

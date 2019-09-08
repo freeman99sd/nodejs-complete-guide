@@ -1,3 +1,5 @@
+const _ = require('lodash');
+
 const Product = require('../models/product');
 const Cart = require('../models/cart');
 
@@ -33,9 +35,23 @@ exports.getIndex = (req, res, next) => {
 };
 
 exports.getCart = (req, res, next) => {
-  res.render('shop/cart', {
-    path: '/cart',
-    pageTitle: 'Your Cart'
+  Cart.getCart(cart => {
+    Product.fetchAll(products => {
+      const cartProducts = [];
+      _.each(products, product => {
+        const productData = _.find(cart.products, prodData => {
+          return prodData.id === product.id;
+        });
+        if (productData) {
+          cartProducts.push({ productData: product, qty: productData.qty });
+        }
+      });
+      res.render('shop/cart', {
+        path: '/cart',
+        pageTitle: 'Your Cart',
+        products: cartProducts
+      });
+    });
   });
 };
 
@@ -43,8 +59,16 @@ exports.postCart = (req, res, next) => {
   const prodId = req.body.productId;
   Product.findById(prodId, product => {
     Cart.addProduct(prodId, product.price);
+    res.redirect('/');
   });
-  res.redirect('/');
+};
+
+exports.postCartDeleteItem = (req, res, next) => {
+  const productId = req.body.productId;
+  Product.findById(productId, product => {
+    Cart.deleteProduct(productId, product.price);
+    res.redirect('/cart');
+  });
 };
 
 exports.getOrders = (req, res, next) => {

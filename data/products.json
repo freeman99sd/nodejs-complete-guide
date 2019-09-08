@@ -1,16 +1,1 @@
-[
-  {
-    "id": "12345",
-    "title": "First Book",
-    "imageUrl": "https://cdn.pixabay.com/photo/2016/03/31/20/51/book-1296045_960_720.png",
-    "description": "A very interesting book about so many even more interesting\r\n              things!",
-    "price": "19"
-  },
-  {
-    "title": "Another Book",
-    "imageUrl": "https://cdn.pixabay.com/photo/2016/03/31/20/51/book-1296045_960_720.png",
-    "description": "sdfasdfasd",
-    "price": "275",
-    "id": "0.5469372880441217"
-  }
-]
+[{"id":"0.07781761926021247","title":"大数据基础与应用","imageUrl":"https://cdn.pixabay.com/photo/2016/03/31/20/51/book-1296045_960_720.png","description":"","price":"111"},{"id":"0.06879282096030592","title":"First Book","imageUrl":"https://cdn.pixabay.com/photo/2016/03/31/20/51/book-1296045_960_720.png","description":"","price":"222"}]

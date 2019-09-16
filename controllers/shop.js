@@ -1,4 +1,3 @@
-/* eslint-disable object-shorthand */
 const Product = require('../models/product');
 const Order = require('../models/order');
 
